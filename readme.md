@@ -6,4 +6,4 @@ You need **SQL ** to run this script
 
 ''' I have created my own ROT-13 algorithm module for easy encryption and decryption'''
 
-''' You'll have to place this file in the python-Lib folder'''
+''' You'll have to place this **cipher.py** file in the python-Lib folder'''
