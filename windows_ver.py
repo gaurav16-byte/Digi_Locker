@@ -22,7 +22,7 @@ def beginning():
 
 def sign_up():  
     newu=[]
-    suudb=ms.connect(host='localhost',user='root',passwd='p@ssw0r4',database='project')
+    suudb=ms.connect(host='localhost',user='root',passwd='password',database='dbname')
     mycur=suudb.cursor()    #suudb-sign up user db
     mycur.execute("select userid from users")
     for i in mycur:
@@ -35,7 +35,7 @@ def sign_up():
     else:
         new_pas=input('Enter your password')
         new_pass=encrypt(new_pas)
-        sudb=ms.connect(host='localhost',user='root',passwd='p@ssw0r4',database='project')
+        sudb=ms.connect(host='localhost',user='root',passwd='password',database='dbname')
         mycur=sudb.cursor()     #sudb-sign up db
         mycur.execute("insert into users values('{}','{}')".format(new_user,new_pass))
         sudb.commit()
@@ -73,7 +73,7 @@ def update_pass(user):
         print("Passwords don't match, Try Again..")
         up_check=input('Re-enter password')
     else:
-        updb=ms.connect(host='localhost',user='root',passwd='p@ssw0r4',database='project')      
+        updb=ms.connect(host='localhost',user='root',passwd='password',database='dbname')      
         mycur=updb.cursor()     #updb-update password db
         mycur.execute("update users set password=('{}') where userid=('{}')".format(encrypt(up),user))
         updb.commit()
@@ -87,7 +87,7 @@ def del_user(user):
     if choice not in 'yY':
         print('Account deletion aborted')
     else:
-        dudb=ms.connect(host='localhost',user='root',passwd='p@ssw0r4',database='project')      
+        dudb=ms.connect(host='localhost',user='root',passwd='password',database='dbname')      
         mycur=dudb.cursor()     #dudb-delete user db
         mycur.execute("delete from users where userid=('{}')".format(user))
         dudb.commit()
@@ -104,7 +104,7 @@ while True:
     elif begin=='b' or 'B':
         curu=[]
         cur_user=input('Enter your username')
-        sicudb=ms.connect(host='localhost',user='root',passwd='p@ssw0r4',database='project')
+        sicudb=ms.connect(host='localhost',user='root',passwd='password',database='dbname')
         mycur=sicudb.cursor()       #sicudb-sign in current user db
         mycur.execute("select userid from users")
         for j in mycur:
@@ -116,7 +116,7 @@ while True:
         else:
             cur_pas=input('Enter your password')
             cur_pass=encrypt(cur_pas)
-            sicpdb=ms.connect(host='localhost',user='root',passwd='p@ssw0r4',database='project')    
+            sicpdb=ms.connect(host='localhost',user='root',passwd='password',database='dbname')    
             mycur=sicpdb.cursor()       #sicpdb-sign in current pasa db
             mycur.execute("select password from users where userid=('{}')".format(cur_user))        
             curp=[]
