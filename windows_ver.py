@@ -94,6 +94,7 @@ def del_user(user):
         dudb.close()
         os.remove('C:\\Users\\Public\\Project\\'+user+'.txt')
         print('Account and related data successfully deleted')
+        sys.exit()
 
 while True:
     beginning()
