@@ -94,6 +94,7 @@ def del_user(user):
         dudb.close()
         os.remove('/Users/your mac name/Documents/Project/'+user+'.txt')
         print('Account and related data successfully deleted')
+        sys.exit()
 
 while True:
     beginning()
