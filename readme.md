@@ -7,3 +7,8 @@ You need **SQL ** to run this script
 ''' I have created my own ROT-13 algorithm module for easy encryption and decryption'''
 
 ''' You'll have to place this **cipher.py** file in the python-Lib folder'''
+
+## **===**UPDATED**===**
+**Added password length to be greater than 6**
+**Added a new option where user can send his diary to his email address(does not work for now)**
+**Added username verification so that it does not contain any whitespaces**
